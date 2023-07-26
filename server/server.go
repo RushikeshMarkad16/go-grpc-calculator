@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/RushikeshMarkad16/go-grpc-calculator/calculator/calculator/calculatorpb"
+	"github.com/RushikeshMarkad16/go-grpc-calculator/calculator/calculatorpb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
