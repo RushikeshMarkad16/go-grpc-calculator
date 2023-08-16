@@ -29,7 +29,9 @@ func SumNumber(conn calculatorpb.CalculatorServiceClient) {
 }
 
 func main() {
-	cc, err := grpc.Dial(":8080", grpc.WithInsecure())
+	//To call service methods, we first need to create a gRPC channel to communicate with the server.
+	//We create this by passing the server address and port number to grpc.Dial() as follows
+	cc, err := grpc.Dial(":50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Cannot connect : %v", err)
 	}

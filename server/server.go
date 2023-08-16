@@ -35,14 +35,18 @@ func (*server) Sum(ctx context.Context, req *calculatorpb.SumRequest) (resp *cal
 
 func main() {
 	fmt.Println("Starting grpc server....")
-	listen, err := net.Listen("tcp", ":8080")
+
+	//Specify the port we want to use to listen for client requests
+	listen, err := net.Listen("tcp", ":50051")
 
 	if err != nil {
 		log.Fatalf("Failed to listen : %v", err)
 	}
 
+	//Create an instance of the gRPC server
 	s := grpc.NewServer()
 
+	//Register our service implementation with the gRPC server.
 	calculatorpb.RegisterCalculatorServiceServer(s, &server{})
 
 	//Register reflection service on gRPC server
