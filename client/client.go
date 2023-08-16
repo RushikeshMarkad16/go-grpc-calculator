@@ -38,6 +38,7 @@ func main() {
 
 	defer cc.Close()
 
+	// client stub to perform RPCs
 	conn := calculatorpb.NewCalculatorServiceClient(cc)
 
 	//Unary
